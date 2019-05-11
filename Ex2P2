@@ -1,0 +1,39 @@
+package exemplos;
+
+public class Ex2P2 {
+	final int MAX = 10;
+	final int MAX2 = 10;
+	final int NIL = -1;
+
+	public int lookup[][] = new int[MAX][MAX2];
+
+	/* Function to initialize NIL values in lookup table */
+	void _initialize(int n, int k) {
+		for (int i = 0; i <= n; i++) {
+			for (int j = 0; j <= k; j++) {
+				lookup[i][j] = NIL;
+			}
+		}
+	}
+
+	int P(int n, int k) {
+		if (lookup[n][k] == NIL) {
+			if ((n == k) || (k <= 1)) {
+				lookup[n][k] = 1;
+				return 1;
+			} else {
+				lookup[n][k] = P(n - 1, k) + (k * P(n - 1, k - 1));
+			}
+
+		}
+		return lookup[n][k];
+	}
+
+	public static void main(String[] args) {
+		Ex2P2 f = new Ex2P2();
+		int n = 4;
+		int k = 2;
+		f._initialize(n, k);
+		System.out.println("Valor é: " + " " + f.P(n, k));
+	}
+}
