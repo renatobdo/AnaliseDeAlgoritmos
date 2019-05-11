@@ -1,4 +1,6 @@
 package exemplos;
+//exemplos retirados de https://www.geeksforgeeks.org/overlapping-subproblems-property-in-dynamic-programming-dp-1/
+//https://www.geeksforgeeks.org/overlapping-subproblems-property-in-dynamic-programming-dp-1/
 
 public class Ex2P2 {
 	final int MAX = 10;
